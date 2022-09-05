@@ -1,70 +1,70 @@
-# rel-vscode README
-
-This is the README for your extension "rel-vscode". After writing up a brief description, we recommend including the following sections.
+# Rel VSCode Extension
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This package provides syntax highlighting, autocompletions, and hover help for Rel, the query language for RelationalAI's Relational Knowledge Graph Management System.
 
-For example if there is an image subfolder under your extension project workspace:
+## Create VSIX Package From Source
 
-\!\[feature X\]\(images/feature-x.png\)
+Install `vsce` globally:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```
+npm install -g vsce
+```
 
-## Requirements
+Create VSIX package:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+```
+vsce package
+```
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 1.2.0
 
-### 1.0.0
+- Update documentation in hover help
+- Support for autocompletion
+- Expand hover help and autocompletion to include the standard library
+- Update syntax highlighting to accommodate changes in the language
 
-Initial release of ...
+### 1.1.1
 
-### 1.0.1
-
-Fixed issue #.
+ - Added support for `module`
+ - Added alternative coloring for `end` when used at the beginning of a line to better support module syntax
 
 ### 1.1.0
 
-Added features X, Y, and Z.
+ - Renamed the language from Delve to Rel
+ - Updated logo
+ - Files with .rel extension are also supported
 
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
+### 1.0.6
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+ - Added support for `@auto_number`
+ - Fixed issue #3: Support formatting multi-line documentation comments to the line width
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+### 1.0.5
 
-## Working with Markdown
+ - Fixed issue #1: Syntax highlighting of docstring
 
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+### 1.0.4
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+ - Minor improvements.
 
-### For more information
+### 1.0.3
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- Improved syntax highlighting:
+  - different color for different groups of keywords
+  - highlighting column names
+- Added hover element for basic language constructs
 
-**Enjoy!**
+### 1.0.2
+
+ - Added `ic` as a keyword.
+
+### 1.0.1
+
+ - Initial release.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
