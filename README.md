@@ -4,19 +4,7 @@
 
 This package provides syntax highlighting, autocompletions, and hover help for Rel, the query language for RelationalAI's Relational Knowledge Graph Management System.
 
-## Create VSIX Package From Source
-
-Install `vsce` globally:
-
-```
-npm install -g vsce
-```
-
-Create VSIX package:
-
-```
-vsce package
-```
+To use the package, open a file with the extension `.rel`.
 
 ## Release Notes
 
