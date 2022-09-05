@@ -8,7 +8,7 @@ function getCompletionMap(map: Map<String, any>) {
   const items: vscode.CompletionItem[] = [];
   const completionMap = new Map();
   map.forEach((value, key) => {
-    for (let i = 1; i < key.length - 1; i++) { 
+    for (let i = 1; i < key.length; i++) { 
       const fragment = key.substring(0, i);
       completionMap.set(fragment, [...(completionMap.get(fragment) || []), {
         label: key,
