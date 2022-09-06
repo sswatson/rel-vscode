@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 const _coreEntries = {
-  "def": "    Definitions\n\nDefinititions define a _computed_ relation.\n\n- `def numbers = {1; 2; 3; 4}`\n- `def netsales[x, y, z] = sales[x, y, z] - returns[x, y, z]`\n- `def grandparent = a, b: ∃(t: parent(a, t) and parent(t, b))`",
+  "def": "    Definitions\n\bDefinitions define a _computed_ relation.\n\n- `def numbers = {1; 2; 3; 4}`\n- `def netsales[x, y, z] = sales[x, y, z] - returns[x, y, z]`\n- `def grandparent = a, b: ∃(t: parent(a, t) and parent(t, b))`",
   "bound": "    Bound Declarations\n\nBound declarations define the upper-bound of a relation that is persisted in the database (and is not computed by a definition). This is similar to a SQL table, or in database theory it is known as an EDB relation.\n\nIt is not possible for the EDB relation to contain any tuple that is not in the upper-bound.\n\n- `bound parent = a, b: Person(a) and Person(b)`\n- `bound parent(a, b) = Person(a) and Person(b)`\n- `bound parent = Person, Person`\n- `bound orderdate(x, y) = Int(x) and Date(y)`",
   "implies": "    Implication\n\n`e1 implies e2` is defined as `(not e1) or (e1 and e2)`\n\nExample:\n\n- `ic no_self_edge(x,y) { edge(x,y) implies x != y }`",
   "@inline": "    Inline Annotation\n\n`@inline` specfies deferred evaluation. When referenced later in the definition of another relation, it will be evaluated at that time.",

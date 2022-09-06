@@ -5,14 +5,13 @@ import core from "../documentation/rel-core";
 import stdlib from "../documentation/stdlib";
 
 function getCompletionMap(map: Map<String, any>) {
-  const items: vscode.CompletionItem[] = [];
   const completionMap = new Map();
   map.forEach((value, key) => {
-    for (let i = 1; i < key.length; i++) { 
+    for (let i = 1; i < key.length + 1; i++) { 
       const fragment = key.substring(0, i);
       completionMap.set(fragment, [...(completionMap.get(fragment) || []), {
         label: key,
-        documentation: value,
+        documentation: new vscode.MarkdownString(value),
       }]);
     }
   });
@@ -57,3 +56,5 @@ function completionItemProvider(): vscode.CompletionItemProvider {
     },
   };
 }
+
+vscode.CompletionItem

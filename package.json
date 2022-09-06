@@ -39,7 +39,7 @@
       {
         "language": "rel",
         "scopeName": "source.rel",
-        "path": "./src/language/rel.tmLanguage.json"
+        "path": "./syntaxes/rel.tmLanguage.json"
       }
     ]
   },
