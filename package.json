@@ -1,5 +1,5 @@
 {
-  "name": "rel-vscode",
+  "name": "rel-language",
   "icon": "public/relationalai.png",
   "displayName": "Rel",
   "description": "Rel Language Support for VS Code",
@@ -33,6 +33,8 @@
           ".rel"
         ],
         "configuration": "./language-configuration.json"
+      },{
+        "id": "rel-injection"
       }
     ],
     "grammars": [
@@ -40,6 +42,20 @@
         "language": "rel",
         "scopeName": "source.rel",
         "path": "./syntaxes/rel.tmLanguage.json"
+      },
+      {
+        "language": "rel-injection",
+        "scopeName": "markdown.rel.codeblock",
+        "path": "./syntaxes/rel.codeblock.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.rel": "rel"
+        },
+        "tokenTypes": {
+          "meta.embedded.block.rel": "other"
+        }
       }
     ]
   },
