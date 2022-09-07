@@ -147,7 +147,7 @@
         }
       ]
     },
-    "operators": {
+    "special-relations": {
       "patterns": [
         {
           "name": "keyword.other.rel",
@@ -155,7 +155,7 @@
         }
       ]
     },
-    "special-relations": {
+    "operators": {
       "patterns": [
         {
           "name": "keyword.other.rel",
