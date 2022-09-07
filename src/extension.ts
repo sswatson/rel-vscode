@@ -1,12 +1,14 @@
 import * as vscode from 'vscode';
 import * as completions from './language/completions';
-import stdlib from './documentation/stdlib';
+import { getStdlibMap } from './documentation/stdlib-data';
 import core from './documentation/rel-core';
 
 export function activate(context: vscode.ExtensionContext) {
+
+	const stdlibMap = getStdlibMap();
 	
 	const disposable = vscode.languages.registerHoverProvider(['rel'], {
-		provideHover(document, position, token) {
+		provideHover(document, position) {
 			const range = document.getWordRangeAtPosition(position);
 			let word = document.getText(range);
 
@@ -22,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
 				}
 		}
 
-		let hoverText = core.get(word) || stdlib.get(word) || undefined;
+		let hoverText = core.get(word) || stdlibMap.get(word)?.name || "";
 
 		return new vscode.Hover(hoverText);
 		}
